@@ -20,6 +20,7 @@ depends=(
 	'base-devel' # Building packages.
 	'fish' # Friendly bash alternative.
 	'git' # VCS.
+	'less' # Page viewer.
 	'neovim' # Text editor.
 	'reflector' # Mirrors updating tool.
 	'sudo' # Elevation of privileges.
