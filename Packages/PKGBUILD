@@ -19,11 +19,16 @@ depends=(
 	'base-devel' # Building packages.
 	'chaotic-keyring' # Chaotic-AUR dep.
 	'chaotic-mirrorlist' # Chaotic-AUR dep.
+	'fd' # Alternative to find.
 	'fish' # Friendly bash alternative.
 	'git' # VCS.
+	'go-task' # Alternative to `make` (Makefiles).
 	'less' # Page viewer.
 	'neovim' # Text editor.
+	'powerpill' # Support for downloading multi-mirror packages (pacman).
+	'python-pipx' # Used to install Python packages globally.
 	'reflector' # Mirrors updating tool.
+	'ripgrep' # GNU Grep alternative.
 	'sudo' # Elevation of privileges.
 )
 makedepends=()
