@@ -22,14 +22,21 @@ depends=(
 	'fd' # Alternative to find.
 	'fish' # Friendly bash alternative.
 	'git' # VCS.
+	'go' # Go Programming Language.
 	'go-task' # Alternative to `make` (Makefiles).
+	'gopls' # Go Language Server.
 	'less' # Page viewer.
+	'lua-language-server' # Obvious reason.
 	'neovim' # Text editor.
+	'npm' # Node package manager.
 	'powerpill' # Support for downloading multi-mirror packages (pacman).
 	'python-pipx' # Used to install Python packages globally.
 	'reflector' # Mirrors updating tool.
 	'ripgrep' # GNU Grep alternative.
+	'shellcheck' # Linter for Bash.
+	'stylua' # Lua formatter.
 	'sudo' # Elevation of privileges.
+	'zig' # Zig Programming Language.
 )
 makedepends=()
 checkdepends=()
