@@ -15,9 +15,10 @@ license=('ISC')
 groups=() # In the future it could be used to group several of my PKGBUILDS.
 depends=(
 	# I sometimes run Arch Linux instances in containers, so I don't need the "linux" package in them.
-	# TODO(ALizarazoTellez): Chaotic-AUR.
 	'base' # Obvious reason.
 	'base-devel' # Building packages.
+	'chaotic-keyring' # Chaotic-AUR dep.
+	'chaotic-mirrorlist' # Chaotic-AUR dep.
 	'fish' # Friendly bash alternative.
 	'git' # VCS.
 	'less' # Page viewer.
