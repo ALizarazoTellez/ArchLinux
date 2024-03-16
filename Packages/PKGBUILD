@@ -22,6 +22,7 @@ depends=(
 	'fd' # Alternative to find.
 	'fish' # Friendly bash alternative.
 	'git' # VCS.
+	'github-cli' # Used to authenticate Git with GitHub.
 	'go' # Go Programming Language.
 	'go-task' # Alternative to `make` (Makefiles).
 	'gopls' # Go Language Server.
