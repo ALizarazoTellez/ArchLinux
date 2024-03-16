@@ -17,6 +17,7 @@ depends=(
 	# I sometimes run Arch Linux instances in containers, so I don't need the "linux" package in them.
 	# TODO(ALizarazoTellez): Chaotic-AUR.
 	'base' # Obvious reason.
+	'base-devel' # Building packages.
 	'fish' # Friendly bash alternative.
 	'git' # VCS.
 	'neovim' # Text editor.
