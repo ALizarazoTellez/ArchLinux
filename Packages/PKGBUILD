@@ -1,0 +1,60 @@
+
+# Anderson's Arch Linux installation packages.
+
+# This is an attempt to install packages declaratively.
+
+# Maintainer: Anderson Lizarazo Tellez <andersonlizarazo27@gmail.com>
+pkgname=local-pkgs
+pkgver=0.1.0
+pkgrel=1
+epoch=
+pkgdesc="Anderson's Arch Linux installation packages."
+arch=('any') # Since this is a metapackage, I think "any" is an appropriate value.
+url="https://github.com/ALizarazoTellez/ArchLinux"
+license=('ISC')
+groups=() # In the future it could be used to group several of my PKGBUILDS.
+depends=(
+	# I sometimes run Arch Linux instances in containers, so I don't need the "linux" package in them.
+	# TODO(ALizarazoTellez): Chaotic-AUR.
+	'base' # Obvious reason.
+	'fish' # Friendly bash alternative.
+	'git' # VCS.
+	'neovim' # Text editor.
+	'reflector' # Mirrors updating tool.
+	'sudo' # Elevation of privileges.
+)
+makedepends=()
+checkdepends=()
+optdepends=()
+provides=()
+conflicts=()
+replaces=()
+backup=()
+options=()
+install=
+changelog= # Not for now.
+source=()
+noextract=()
+sha256sums=()
+validpgpkeys=()
+
+prepare() {
+	#cd "$pkgname-$pkgver"
+	echo "The package is not prepared because it is a meta-package."
+}
+
+build() {
+	#cd "$pkgname-$pkgver"
+	echo "The package is not built because it is a meta-package."
+}
+
+check() {
+	#cd "$pkgname-$pkgver"
+	echo "The package is not checked because it is a meta-package."
+}
+
+package() {
+	#cd "$pkgname-$pkgver"
+	echo "This is a meta-package."
+}
+
