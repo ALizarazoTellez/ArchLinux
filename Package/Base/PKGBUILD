@@ -1,0 +1,25 @@
+
+# Anderson's Arch Linux installation packages.
+
+# This is an attempt to install packages declaratively.
+
+# Contributor: Anderson Lizarazo Tellez <andersonlizarazo27@gmail.com>
+# Maintainer: Anderson Lizarazo Tellez <andersonlizarazo27@gmail.com>
+
+pkgname=local-base
+pkgver=0.1.0
+pkgrel=1
+pkgdesc="Anderson's Arch Linux base packages."
+arch=('any')
+url="https://github.com/ALizarazoTellez/ArchLinux"
+license=('ISC')
+
+groups=() # In the future it could be used to group several of my PKGBUILDS.
+changelog= # Not for now.
+
+depends=(
+	# I sometimes run Arch Linux instances in containers, so I don't need the "linux" package in them.
+	'base' # Base system packages.
+	'neovim' # Text editor.
+	'sudo' # Elevation of privileges.
+)

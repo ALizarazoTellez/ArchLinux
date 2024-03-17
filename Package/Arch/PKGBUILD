@@ -1,0 +1,29 @@
+
+# Anderson's Arch Linux installation packages.
+
+# This is an attempt to install packages declaratively.
+
+# Maintainer: Anderson Lizarazo Tellez <andersonlizarazo27@gmail.com>
+# Contributor: Anderson Lizarazo Tellez <andersonlizarazo27@gmail.com>
+
+pkgname=local-arch
+pkgver=0.1.0
+pkgrel=1
+epoch=
+pkgdesc="Anderson's Arch Linux specific packages."
+arch=('any')
+url="https://github.com/ALizarazoTellez/ArchLinux"
+license=('ISC')
+
+groups=() # In the future it could be used to group several of my PKGBUILDS.
+changelog= # Not for now.
+
+depends=(
+	# Chaotic-AUR.
+	'chaotic-keyring' # Chaotic-AUR dep.
+	'chaotic-mirrorlist' # Chaotic-AUR dep.
+
+	# Mirrors.
+	'powerpill' # Support for downloading multi-mirror packages (pacman).
+	'reflector' # Mirrors updating tool.
+)

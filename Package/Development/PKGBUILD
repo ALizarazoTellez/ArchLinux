@@ -1,0 +1,55 @@
+
+# Anderson's Arch Linux installation packages.
+
+# This is an attempt to install packages declaratively.
+
+# Maintainer: Anderson Lizarazo Tellez <andersonlizarazo27@gmail.com>
+# Contributor: Anderson Lizarazo Tellez <andersonlizarazo27@gmail.com>
+
+pkgname=local-development
+pkgver=0.1.0
+pkgrel=1
+epoch=
+pkgdesc="Anderson's Arch Linux development packages."
+arch=('any')
+url="https://github.com/ALizarazoTellez/ArchLinux"
+license=('ISC')
+
+groups=() # In the future it could be used to group several of my PKGBUILDS.
+changelog= # Not for now.
+
+depends=(
+	# Misc.
+	'git' # Version control system.
+	'github-cli' # Used to authenticate Git with GitHub.
+	'go-task' # Alternative to `make` (Makefiles).
+
+	# Text editor.
+	'neovim' # My favorite text editor.
+	'fd' # Neovim: Telescope dep.
+	'ripgrep' # Neovim: Telescope dep.
+
+	# Go toolchain.
+	'go' # Go Programming Language.
+	'gopls' # Go Language Server.
+
+	# Python toolchain.
+	'python-pipx' # Used to install Python packages globally.
+
+	# C toolchain.
+	'base-devel' # Basic C toolchain.
+
+	# Lua toolchain.
+	'lua-language-server' # Lua language server.
+	'stylua' # Lua formatter.
+
+	# Shell development.
+	'namcap' # PKGBUILD linter.
+	'shellcheck' # Linter for Bash.
+
+	# JavaScript toolchain.
+	'npm' # Node package manager.
+
+	# Zig toolchain.
+	'zig' # Zig Programming Language.
+)

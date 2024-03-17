@@ -1,0 +1,5 @@
+
+# Files created by `makepkg`.
+*.pkg.tar.zst
+pkg/
+src/
