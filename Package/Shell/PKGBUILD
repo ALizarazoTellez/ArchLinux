@@ -24,6 +24,7 @@ depends=(
 
 	# Tools.
 	'less' # Page viewer.
+	'tree' # List directories in a tree format.
 
 	# Alternatives.
 	'fd' # Alternative to find.
