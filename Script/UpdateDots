@@ -1,0 +1,54 @@
+#!/usr/bin/env fish
+
+set Dotfiles (path resolve (path dirname (status --current-filename))/..)
+set DotfilesConfig $Dotfiles/Config
+
+set Local (path resolve ~)
+set LocalConfig $Local/.config
+
+function main
+    for file in $DotfilesConfig/**
+        if not test -f $file
+            continue
+        end
+
+        set -l file (remove-prefix $DotfilesConfig $file)
+
+        cmp -s $LocalConfig/$file $DotfilesConfig/$file
+        switch $status
+            case 2
+                echo "The file not exists:" $file
+                if confirm "Delete it?"
+                    rm $DotfilesConfig/$file
+                end
+            case 1
+                echo "The file is different:" $file
+                if confirm "Update dotfile?"
+                    cp $LocalConfig/$file $DotfilesConfig/$file
+                end
+            case 0
+                echo "Ok:" $file
+        end
+    end
+end
+
+# Args: prefix, target
+# Print: target without prefix.
+function remove-prefix
+    string sub --start=(math (string length $argv[1]) + 2) $argv[2]
+end
+
+# Args: prompt.
+# Return: 0 (true) for user confirmation.
+function confirm
+    set -f input (read -P "$argv[1] [y]es/[N]o: ")
+
+    if test "$input" = y
+        return 0
+    end
+
+    return 1
+end
+
+main
+exit $status
