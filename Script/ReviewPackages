@@ -1,0 +1,40 @@
+#!/usr/bin/env fish
+
+function main
+    for package in (list-non-local-packages)
+        echo "Non local package:" $package
+        if confirm "Mark as dependency?"
+            sudo pacman -D --asdep $package
+        end
+    end
+end
+
+function list-non-local-packages
+    for package in (list-packages)
+        set -l pkg (string split -f1 '-' $package)
+        if test $pkg != local
+            echo $package
+        end
+    end
+end
+
+function list-packages
+    for package in (pacman -Qe)
+        string split -f1 ' ' $package
+    end
+end
+
+# Args: prompt.
+# Return: 0 (true) for user confirmation.
+function confirm
+    set -f input (read -P "$argv[1] [y]es/[N]o: ")
+
+    if test "$input" = y
+        return 0
+    end
+
+    return 1
+end
+
+main
+exit $status
