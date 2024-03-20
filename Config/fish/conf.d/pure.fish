@@ -41,11 +41,11 @@ _pure_set_default pure_color_username_normal pure_color_mute
 _pure_set_default pure_color_username_root pure_color_light
 
 # Number of running jobs
-_pure_set_default pure_show_jobs false
+_pure_set_default pure_show_jobs true
 _pure_set_default pure_color_jobs pure_color_normal
 
 # Show system time
-_pure_set_default pure_show_system_time false
+_pure_set_default pure_show_system_time true
 _pure_set_default pure_color_system_time pure_color_mute
 
 # Nix build environment
@@ -55,12 +55,12 @@ _pure_set_default pure_color_nixdevshell_prefix pure_color_info
 _pure_set_default pure_color_nixdevshell_symbol pure_color_mute
 
 #  env for Python
-_pure_set_default pure_enable_virtualenv true
+_pure_set_default pure_enable_virtualenv false
 _pure_set_default pure_symbol_virtualenv_prefix "" # 🐍
 _pure_set_default pure_color_virtualenv pure_color_mute
 
 # AWS profile name
-_pure_set_default pure_enable_aws_profile true
+_pure_set_default pure_enable_aws_profile false
 _pure_set_default pure_symbol_aws_profile_prefix "" # ☁️
 _pure_set_default pure_color_aws_profile pure_color_warning
 
@@ -101,7 +101,7 @@ _pure_set_default pure_color_prefix_root_prompt pure_color_danger
 _pure_set_default pure_enable_single_line_prompt false
 
 # Detect when running in container (e.g. docker, podman, LXC/LXD)
-_pure_set_default pure_enable_container_detection true
+_pure_set_default pure_enable_container_detection false
 _pure_set_default pure_symbol_container_prefix "" # suggestion: '🐋' or '📦'
 
 # Detect when running in SSH
