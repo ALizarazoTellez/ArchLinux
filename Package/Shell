@@ -23,10 +23,11 @@ depends=(
 	'fish' # Friendly Bash alternative.
 
 	# Tools.
+	'gum' # Beautiful shell scritps.
 	'less' # Page viewer.
 	'tree' # List directories in a tree format.
-	'zoxide' # A smarter cd command.
 	'zellij' # Terminal multiplexer.
+	'zoxide' # A smarter cd command.
 
 	# Alternatives.
 	'fd' # Alternative to find.

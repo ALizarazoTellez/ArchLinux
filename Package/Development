@@ -45,6 +45,7 @@ depends=(
 	'stylua' # Lua formatter.
 
 	# Shell development.
+	'gum' # Beautiful shell scritps.
 	'namcap' # PKGBUILD linter.
 	'shellcheck' # Linter for Bash.
 
