@@ -26,6 +26,7 @@ depends=(
 	'less' # Page viewer.
 	'tree' # List directories in a tree format.
 	'zoxide' # A smarter cd command.
+	'zellij' # Terminal multiplexer.
 
 	# Alternatives.
 	'fd' # Alternative to find.
