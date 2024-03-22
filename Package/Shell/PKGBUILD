@@ -31,4 +31,5 @@ depends=(
 	# Alternatives.
 	'fd' # Alternative to find.
 	'ripgrep' # GNU Grep alternative.
+	'btop' # Alternative to `top`.
 )
