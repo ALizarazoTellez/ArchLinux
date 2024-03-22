@@ -32,6 +32,7 @@ depends=(
 	# Go toolchain.
 	'go' # Go Programming Language.
 	'gopls' # Go Language Server.
+	'go-tools' # Go tools.
 
 	# Python toolchain.
 	'python-pipx' # Used to install Python packages globally.
