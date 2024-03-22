@@ -1,0 +1,47 @@
+#!/usr/bin/env fish
+
+set Dotfiles (path resolve (path dirname (status --current-filename))/..)
+
+set PackageDir $Dotfiles/Package
+
+function main
+    clean-package-dir # Prevent strange match in the next for loop.
+
+    cd $PackageDir
+    for package in *
+        gum spin --title "Building: $package" -- \
+            makepkg -p $package \
+            --clean \
+            --cleanbuild \
+            --syncdeps \
+            --noconfirm
+
+        sudo gum spin --title "Installing: $package" -- \
+            pacman --noconfirm -U (lookup-package $package)
+    end
+
+    clean-package-dir # Keep clean the directory of packages.
+end
+
+function clean-package-dir
+    for item in $PackageDir/*
+        if not test -f $item
+            rm --dir --recursive $item
+            continue
+        end
+
+        if string match --quiet --regex '.*\.pkg\.tar\.zst$' $item
+            rm $item
+            continue
+        end
+    end
+end
+
+function lookup-package
+    set -f name (string lower $argv[1])
+
+    string match --regex '^local-'$name'-.*\.pkg\.tar\.zst$' *
+end
+
+main
+exit $status
