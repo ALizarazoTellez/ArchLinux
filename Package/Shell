@@ -23,6 +23,7 @@ depends=(
 	'fish' # Friendly Bash alternative.
 
 	# Tools.
+	'glow' # Markdown renderer.
 	'gum' # Beautiful shell scritps.
 	'less' # Page viewer.
 	'tree' # List directories in a tree format.

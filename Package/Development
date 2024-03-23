@@ -22,6 +22,7 @@ depends=(
 	# Misc.
 	'git' # Version control system.
 	'github-cli' # Used to authenticate Git with GitHub.
+	'glow' # Markdown renderer.
 	'go-task' # Alternative to `make` (Makefiles).
 
 	# Text editor.
