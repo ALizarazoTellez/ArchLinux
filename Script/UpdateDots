@@ -2,29 +2,44 @@
 
 set Dotfiles (path resolve (path dirname (status --current-filename))/..)
 set DotfilesConfig $Dotfiles/Config
+set DotfilesSystemConfig $Dotfiles/System
 
 set Local (path resolve ~)
 set LocalConfig $Local/.config
 
+set SystemConfig /
+
 function main
-    for file in $DotfilesConfig/**
+    update-dotfiles $DotfilesConfig $LocalConfig
+
+    update-dotfiles $DotfilesSystemConfig $SystemConfig
+end
+
+function update-dotfiles
+    set -f dotfiles $argv[1]
+    set -f local $argv[2]
+
+    echo "Working on dotifiles: $dotfiles"
+    echo "Working on local files: $local"
+
+    for file in $dotfiles/**
         if not test -f $file
             continue
         end
 
-        set -l file (remove-prefix $DotfilesConfig $file)
+        set -l file (remove-prefix $dotfiles $file)
 
-        cmp -s $LocalConfig/$file $DotfilesConfig/$file
+        cmp -s $local/$file $dotfiles/$file
         switch $status
             case 2
                 echo "The file not exists:" $file
-                if confirm "Delete it?"
-                    rm $DotfilesConfig/$file
+                if gum confirm "Delete it?"
+                    rm $dotfiles/$file
                 end
             case 1
                 echo "The file is different:" $file
-                if confirm "Update dotfile?"
-                    cp $LocalConfig/$file $DotfilesConfig/$file
+                if gum confirm "Update dotfile?"
+                    cp $local/$file $dotfiles/$file
                 end
             case 0
                 echo "Ok:" $file
@@ -36,18 +51,6 @@ end
 # Print: target without prefix.
 function remove-prefix
     string sub --start=(math (string length $argv[1]) + 2) $argv[2]
-end
-
-# Args: prompt.
-# Return: 0 (true) for user confirmation.
-function confirm
-    set -f input (read -P "$argv[1] [y]es/[N]o: ")
-
-    if test "$input" = y
-        return 0
-    end
-
-    return 1
 end
 
 main
